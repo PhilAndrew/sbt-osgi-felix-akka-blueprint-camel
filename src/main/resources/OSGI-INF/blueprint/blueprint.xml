@@ -17,6 +17,10 @@
     <service ref="helloservice" interface="hoqtec.HelloWorldService" />
 
     <bean id="helloservice" class="hoqtec.impl.HelloWorldServiceImpl" init-method="startup" />
+
+
+
+
     <!--
 
     <camelContext xmlns="http://camel.apache.org/schema/blueprint">
