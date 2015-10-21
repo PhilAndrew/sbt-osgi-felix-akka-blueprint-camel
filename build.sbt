@@ -34,6 +34,7 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "jcl-over-slf4j" % "1.7.12",
   "org.slf4j" % "log4j-over-slf4j" % "1.7.12",
   "com.typesafe.akka" %% "akka-osgi" % "2.4.0",
+//  "com.typesafe.akka" %% "akka-actor" % "2.4.0",
   // Blueprint
   // http://stackoverflow.com/questions/24938214/is-apache-aries-running-in-felix
   "org.apache.felix" % "org.apache.felix.configadmin" % "1.8.0",
@@ -57,12 +58,15 @@ libraryDependencies += scalacheck % Test
 osgiDependencies in Compile := bundleReqs("org.apache.camel.camel-core-osgi", "org.apache.aries.blueprint.cm",
   "org.apache.aries.blueprint.core", "com.typesafe.akka.osgi", "org.apache.aries.blueprint")
 
+osgiDependencies in run := bundleReqs("org.apache.aries.blueprint.core", "org.apache.aries.proxy")
+
 // This appends these import packages to the end
 // I need sun.misc, dont know about the rest
 OsgiKeys.importPackage := Seq(
   "sun.misc",
   "!aQute.bnd.annotation.*",
-  "*"
+  "*",
+  "org.apache.camel", "org.apache.camel.impl", "com.typesafe.config"
 )
 
 bundleActivator := Some("hoqtec.impl.Activator")
