@@ -1,4 +1,4 @@
-package hoqtec.impl
+package osgidemo.impl
 
 import org.osgi.framework.{BundleActivator, BundleContext}
 import org.slf4j.LoggerFactory

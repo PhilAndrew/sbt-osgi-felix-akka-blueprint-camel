@@ -7,16 +7,16 @@
 
     <!--<reference id="helloservice" interface="hoqtec.HelloWorldService" />-->
 
-    <bean id="helloclient" class="hoqtec.impl.HelloWorldClient" init-method="startup">
+    <bean id="helloclient" class="osgidemo.impl.HelloWorldClient" init-method="startup">
         <property name="helloWorldService" ref="helloservice" />
     </bean>
 
-    <bean id="none-managed" class="hoqtec.impl.TestBean" init-method="start" scope="singleton">
+    <bean id="none-managed" class="osgidemo.impl.TestBean" init-method="start" scope="singleton">
     </bean>
 
-    <service ref="helloservice" interface="hoqtec.HelloWorldService" />
+    <service ref="helloservice" interface="osgidemo.HelloWorldService" />
 
-    <bean id="helloservice" class="hoqtec.impl.HelloWorldServiceImpl" init-method="startup" />
+    <bean id="helloservice" class="osgidemo.impl.HelloWorldServiceImpl" init-method="startup" />
 
 
 

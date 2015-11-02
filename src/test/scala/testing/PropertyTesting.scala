@@ -1,6 +1,6 @@
 package testing
 
-import hoqtec.impl.OsgiBundle
+import osgidemo.impl.OsgiBundle
 import org.scalacheck.Properties
 
 /**

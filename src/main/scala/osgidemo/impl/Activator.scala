@@ -1,4 +1,4 @@
-package hoqtec.impl
+package osgidemo.impl
 
 import akka.actor.Actor.Receive
 import akka.actor.{Actor, Props, ActorSystem}

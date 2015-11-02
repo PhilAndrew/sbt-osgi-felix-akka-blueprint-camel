@@ -46,7 +46,7 @@ OsgiKeys.importPackage := Seq(
 
 bundleActivator := Some("hoqtec.impl.Activator")
 
-exportPackage += "hoqtec"
+exportPackage += "osgidemo"
 
 privatePackage := Seq("hoqtec.impl")
 

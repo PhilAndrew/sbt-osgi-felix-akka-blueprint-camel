@@ -1,6 +1,6 @@
-package hoqtec.impl
+package osgidemo.impl
 
-import hoqtec.HelloWorldService
+import osgidemo.HelloWorldService
 
 /**
   * Created by user on 16/10/2015.
