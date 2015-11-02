@@ -44,10 +44,10 @@ OsgiKeys.importPackage := Seq(
 //  "!aQute.bnd.annotation.*",
 )
 
-bundleActivator := Some("hoqtec.impl.Activator")
+bundleActivator := Some("osgidemo.impl.Activator")
 
 exportPackage += "osgidemo"
 
-privatePackage := Seq("hoqtec.impl")
+privatePackage := Seq("osgidemo.impl")
 
 bundleVersion := "1.0.0"

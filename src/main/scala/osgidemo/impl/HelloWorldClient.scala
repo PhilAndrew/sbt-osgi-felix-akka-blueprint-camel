@@ -8,7 +8,9 @@ import osgidemo.HelloWorldService
 class HelloWorldClient {
   var service: HelloWorldService = null
 
-  def startup():Unit = { println("Client startup") }
+  def startup():Unit = {
+    println("Client startup")
+  }
 
   def getHelloWorldService(): HelloWorldService = {
     println("getHelloWorldService")
@@ -17,5 +19,6 @@ class HelloWorldClient {
 
   def setHelloWorldService(s: HelloWorldService): Unit = {
     println("getHelloWorldService2")
-    service = s; }
+    service = s;
+  }
 }

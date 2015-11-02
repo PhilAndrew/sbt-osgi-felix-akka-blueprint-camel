@@ -9,7 +9,9 @@ case class SomeMessage()
 
 class SomeActor extends Actor {
   override def receive: Receive = {
-    case _ => println("received message in Actor")
+    case _ => {
+      println("received message in Actor")
+    }
   }
 }
 

@@ -1,5 +1,7 @@
 package osgidemo.impl
 
 class TestBean {
-  def start(): Unit = println("Start test bean")
+  def start(): Unit = {
+    println("Start test bean")
+  }
 }
