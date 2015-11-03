@@ -6,6 +6,7 @@
       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd
     ">
 
+    <!-- Test code -->
     <bean id="helloclient" class="osgidemo.impl.HelloWorldClient" init-method="startup">
         <property name="helloWorldService" ref="helloservice" />
     </bean>
@@ -17,7 +18,7 @@
 
 
 
-
+    <!-- Binds Akka and Camel together -->
     <bean id="akka" class="osgidemo.impl.AkkaBean" init-method="start" destroy-method="stop">
         <property name="bundleContext" ref="blueprintBundleContext"></property>
         <property name="camelContext" ref="camelContext"></property>
