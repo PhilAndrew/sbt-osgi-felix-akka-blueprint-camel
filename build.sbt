@@ -15,7 +15,9 @@ libraryDependencies ++= Seq(
   // http://stackoverflow.com/questions/24938214/is-apache-aries-running-in-felix
   "org.apache.aries.blueprint" % "org.apache.aries.blueprint.cm" % "1.0.7",
   "org.apache.aries.proxy" % "org.apache.aries.proxy" % "1.0.1",
-  "org.apache.camel" % "camel-core-osgi" % "2.16.0")
+  "org.apache.camel" % "camel-core-osgi" % "2.16.0",
+// Now we want camel-blueprint
+  "org.apache.camel" % "camel-blueprint" % "2.16.0")
 
 // Not required
 //"org.apache.felix" % "org.apache.felix.configadmin" % "1.8.0",
@@ -34,11 +36,14 @@ libraryDependencies += scalacheck % Test
 osgiDependencies in Compile := bundleReqs("org.apache.camel.camel-core-osgi",
                                         "com.typesafe.akka.osgi")
 
-osgiDependencies in run := bundleReqs("org.apache.aries.blueprint.core", "org.apache.aries.proxy")
+// This starts the bundles with these symbolic names
+osgiDependencies in run := bundleReqs("org.apache.aries.blueprint.core",
+  "org.apache.aries.proxy",
+  "org.apache.camel.camel-blueprint")
 
 // This appends these import packages to the end
 // I need sun.misc, dont know about the rest
-OsgiKeys.importPackage := Seq(
+importPackage := Seq(
   "sun.misc",
   "*"
 //  "!aQute.bnd.annotation.*",
@@ -51,3 +56,4 @@ exportPackage += "osgidemo"
 privatePackage := Seq("osgidemo.impl")
 
 bundleVersion := "1.0.0"
+
