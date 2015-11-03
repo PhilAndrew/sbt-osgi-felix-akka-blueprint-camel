@@ -27,7 +27,7 @@
     <camelContext trace="true" id="camelContext" xmlns="http://camel.apache.org/schema/blueprint">
 
         <route>
-            <from uri="timer:fetch?period=3600s&amp;delay=5s" />
+            <from uri="timer:fetch?period=5s&amp;delay=5s" />
             <to uri="log:osgidemo?level=DEBUG" />
         </route>
 
