@@ -21,7 +21,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-osgi" % "2.4.0",
   "com.typesafe.akka" %% "akka-actor" % "2.4.0",
   "com.typesafe.akka" %% "akka-slf4j" % "2.4.0",
-  "com.typesafe.akka" %% "akka-camel" % "2.4.0")
+  "com.typesafe.akka" %% "akka-camel" % "2.4.0",
+  "com.typesafe.akka" %% "akka-remote" % "2.4.0")
 
 // Not required
 //"org.apache.felix" % "org.apache.felix.configadmin" % "1.8.0",
