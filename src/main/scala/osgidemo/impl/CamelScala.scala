@@ -1,6 +1,6 @@
 package osgidemo.impl
 
-import org.apache.camel.builder.RouteBuilder
+import org.apache.camel.scala.dsl.builder.RouteBuilder
 
 class CamelScala extends RouteBuilder {
   "direct:a" --> "mock:a"
