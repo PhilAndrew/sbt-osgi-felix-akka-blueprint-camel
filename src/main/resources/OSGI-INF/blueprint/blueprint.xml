@@ -20,14 +20,14 @@
 
 
     <!-- Binds Akka and Camel together -->
-    <bean id="akka" class="osgidemo.impl.AkkaBean" init-method="start" destroy-method="stop">
+    <!--<bean id="akka" class="osgidemo.impl.AkkaBean" init-method="start" destroy-method="stop">
         <property name="bundleContext" ref="blueprintBundleContext"></property>
         <property name="camelContext" ref="camelContext"></property>
     </bean>
 
     <bean id="actorStart" class="osgidemo.impl.ActorStart" init-method="start" destroy-method="stop">
         <property name="akka" ref="akka"></property>
-    </bean>
+    </bean>-->
 
 
 
