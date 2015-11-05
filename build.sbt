@@ -52,6 +52,7 @@ osgiDependencies in run := bundleReqs("org.apache.aries.blueprint.core",
   "org.apache.aries.proxy",
   "org.apache.camel.camel-blueprint",
   // Not sure if the next two are needed
+  "com.typesafe.akka.actor",
   "com.typesafe.akka.osgi",
   "com.typesafe.akka.camel",
   "com.typesafe.akka.slf4j", "com.typesafe.akka.remote")
