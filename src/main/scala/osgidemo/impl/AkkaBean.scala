@@ -41,13 +41,19 @@ class AkkaBean {
   private var akkaCamelBean: ActorRef = _
 
   def start(): Unit = {
+    println("Start 1")
     AkkaCamelContextProvider.contextProvider = camelContext.asInstanceOf[DefaultCamelContext]
 
+    println("Start 2")
     val sysConfig = getActorSystemConfiguration(bundleContext)
+    println("Start 3")
     val actorFactory = OsgiActorSystemFactory(bundleContext, sysConfig)
+    println("Start 4")
     system = Some(actorFactory.createActorSystem(Option(getActorSystemName(bundleContext))))
+    println("Start 5")
     //system foreach (addLogServiceListener(context, _))
     system foreach (configure(bundleContext, _))
+    println("Start 6 end")
   }
 
   def stop(): Unit = {
@@ -69,6 +75,7 @@ class AkkaBean {
   }
 
   def registerService(context: BundleContext, system: ActorSystem): Unit = {
+    println("Register 1")
     registration.foreach(_.unregister()) //Cleanup
     val properties = new Properties()
     properties.put("name", system.name)

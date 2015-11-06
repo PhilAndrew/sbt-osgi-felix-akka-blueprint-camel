@@ -65,7 +65,7 @@ importPackage := Seq(
   //  "!aQute.bnd.annotation.*",
 )
 
-bundleActivator := Some("osgidemo.impl.Activator")
+//bundleActivator := Some("osgidemo.impl.Activator")
 
 exportPackage += "osgidemo"
 
