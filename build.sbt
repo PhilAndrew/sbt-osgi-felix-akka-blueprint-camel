@@ -55,7 +55,8 @@ osgiDependencies in run := bundleReqs("org.apache.aries.blueprint.core",
   "com.typesafe.akka.actor",
   "com.typesafe.akka.osgi",
   "com.typesafe.akka.camel",
-  "com.typesafe.akka.slf4j", "com.typesafe.akka.remote")
+  "com.typesafe.akka.slf4j",
+  "com.typesafe.akka.remote")
 
 // This appends these import packages to the end
 // I need sun.misc, dont know about the rest
