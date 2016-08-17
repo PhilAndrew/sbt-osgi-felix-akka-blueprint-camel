@@ -47,7 +47,7 @@ class AkkaBean {
     println("Start 2")
     val sysConfig = getActorSystemConfiguration(bundleContext)
     println("Start 3")
-    val actorFactory = OsgiActorSystemFactory(bundleContext, sysConfig)
+    val actorFactory = MyOsgiActorSystemFactory(bundleContext, sysConfig)
     println("Start 4")
     system = Some(actorFactory.createActorSystem(Option(getActorSystemName(bundleContext))))
     println("Start 5")
