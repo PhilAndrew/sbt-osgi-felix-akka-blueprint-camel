@@ -21,11 +21,11 @@ libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.0.3", // Required by camel-scala
   "org.apache.camel" % "camel-scala" % "2.16.0",
   // Akka
-  "com.typesafe.akka" %% "akka-osgi" % "2.4.0",
-  "com.typesafe.akka" %% "akka-actor" % "2.4.0",
-  "com.typesafe.akka" %% "akka-slf4j" % "2.4.0",
-  "com.typesafe.akka" %% "akka-camel" % "2.4.0",
-  "com.typesafe.akka" %% "akka-remote" % "2.4.0")
+  "com.typesafe.akka" %% "akka-osgi" % "2.4.8",
+  "com.typesafe.akka" %% "akka-actor" % "2.4.8",
+  "com.typesafe.akka" %% "akka-slf4j" % "2.4.8",
+  "com.typesafe.akka" %% "akka-camel" % "2.4.8",
+  "com.typesafe.akka" %% "akka-remote" % "2.4.8")
 
 // Not required
 //"org.apache.felix" % "org.apache.felix.configadmin" % "1.8.0",
