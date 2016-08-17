@@ -1,12 +1,10 @@
-package osgidemo.impl
+package osgidemo.impl.util
 
 import java.net.URL
 import java.util.Enumeration
 
-import akka.osgi.{BundleDelegatingClassLoader, OsgiActorSystemFactory}
+import akka.osgi.BundleDelegatingClassLoader
 import org.osgi.framework.{Bundle, BundleContext}
-
-import scala.annotation.tailrec
 
 
 object MyBundleDelegatingClassLoader {
@@ -19,16 +17,23 @@ object MyBundleDelegatingClassLoader {
     new MyBundleDelegatingClassLoader(context.getBundle, fallBackCLassLoader.orNull)
 }
 
-
 case class MyBundleDelegatingClassLoader(bundle: Bundle, fallBackClassLoader: ClassLoader) extends BundleDelegatingClassLoader(bundle, fallBackClassLoader) {
 
   override def findResource(name: String): URL = {
-    println("####" + name)
+    //println("1####" + name)
     super.findResource(name)
   }
 
   override def findResources(name: String): Enumeration[URL] = {
-    println("####" + name)
+    /*import scala.collection.JavaConversions._
+    val resources = bundle.getResources(name)
+    if (resources!=null) {
+      println("2####" + name)
+      for (n <- resources) {
+        println(n.toString)
+      }
+      println(resources)
+    }*/
     super.findResources(name)
   }
 

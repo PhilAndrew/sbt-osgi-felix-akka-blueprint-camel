@@ -70,7 +70,7 @@ importPackage := Seq(
 
 exportPackage += "osgidemo"
 
-privatePackage := Seq("osgidemo.impl")
+privatePackage := Seq("osgidemo.impl", "osgidemo.impl.util")
 
 bundleVersion := "1.0.0"
 

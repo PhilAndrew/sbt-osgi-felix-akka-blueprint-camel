@@ -1,7 +1,7 @@
-package osgidemo.impl
+package osgidemo.impl.util
 
 import akka.actor.ActorSystem
-import akka.osgi.{ActorSystemActivator, BundleDelegatingClassLoader}
+import akka.osgi.ActorSystemActivator
 import com.typesafe.config.{Config, ConfigFactory}
 import org.osgi.framework.BundleContext
 

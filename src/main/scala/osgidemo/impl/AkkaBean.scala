@@ -1,13 +1,15 @@
 package osgidemo.impl
 
 import java.util.{Dictionary, Properties}
-import akka.actor.{ExtendedActorSystem, ActorRef, Props, ActorSystem}
+
+import akka.actor.{ActorRef, ActorSystem, ExtendedActorSystem, Props}
 import akka.camel.ContextProvider
 import akka.osgi.OsgiActorSystemFactory
-import com.typesafe.config.{ConfigFactory, Config}
+import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.camel.blueprint.BlueprintCamelContext
 import org.apache.camel.impl.DefaultCamelContext
-import org.osgi.framework.{ServiceRegistration, BundleContext}
+import org.osgi.framework.{BundleContext, ServiceRegistration}
+import osgidemo.impl.util.MyOsgiActorSystemFactory
 //remove if not needed
 import scala.collection.JavaConversions._
 
