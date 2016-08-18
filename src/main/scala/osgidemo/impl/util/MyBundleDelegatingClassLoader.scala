@@ -21,42 +21,29 @@ object MyBundleDelegatingClassLoader {
 
 case class MyBundleDelegatingClassLoader(bundle: Bundle, fallBackClassLoader: ClassLoader) extends BundleDelegatingClassLoader(bundle, fallBackClassLoader) {
 
-  override def findResource(name: String): URL = {
+  private def getAllBundleResources(name: String) = {
     val bundles = bundle.getBundleContext.getBundles.toList
     val resources: Seq[java.net.URL] = bundles.flatMap((bundle: Bundle) => {
       val resource = bundle.getResource(name)
       if (resource==null) None else Some(resource)
     })
+    resources
+  }
+
+  override def findResource(name: String): URL = {
+    val resources = getAllBundleResources(name)
     if (resources.size > 0)
       resources.head
     else
       super.findResource(name)
   }
 
-  def inputStreamToString(inputStream: java.io.InputStream): String = {
-    val result = new ByteArrayOutputStream()
-    val buffer = Array.ofDim[Byte](1024)
-    var length: Int = 0
-    while ({
-      length = inputStream.read(buffer)
-      length != (-1)
-    }) {
-      result.write(buffer, 0, length)
-    }
-    result.toString("UTF-8")
-  }
-
   override def findResources(name: String): Enumeration[URL] = {
     import collection.JavaConverters._
-    val bundles = bundle.getBundleContext.getBundles.toList
-    val resources: Seq[java.net.URL] = bundles.flatMap((bundle: Bundle) => {
-      val resource = bundle.getResource(name)
-      if (resource==null) None else Some(resource)
-    })
+    val resources = getAllBundleResources(name)
     if (resources.size > 0)
       Collections.enumeration(resources.asJava)
     else
       super.findResources(name)
   }
-
 }
